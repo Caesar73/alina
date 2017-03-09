@@ -1,0 +1,197 @@
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+
+// Buttons
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button,
+button {
+  // background-color: #E6E6E6;
+  background-color: transparent;
+  border-radius: $global-radius;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: $secondary-color;
+  display: inline-block;
+  // border: 1px solid #999;  /*IE 6/7/8*/
+  // border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+  // color: #444; /* rgba not supported (IE 8) */
+  // color: rgba(0, 0, 0, 0.80); /* rgba supported */
+
+  font-family: inherit;
+  // font-size: 100%;
+  font-size: 11px;
+  font-weight: 600;
+  height: 38px;
+  padding: 0 30px;
+  // padding: 0.5em 1em;
+  line-height: 38px;
+  // line-height: normal;
+  letter-spacing: .1rem;
+
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-user-drag: none;
+  user-select: none;
+  zoom: 1;
+
+}
+
+/* Firefox: Get rid of the inner focus border */
+.button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.button-hover,
+.button:hover,
+button:hover {
+  color: $dark-grey;
+  border-color: lighten($dark-grey, 33.3%);
+  outline: 0;
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+
+.button-focus,
+.button:focus,
+button:focus {
+  color: $dark-grey;
+  border-color: lighten($dark-grey, 33.3%);
+  outline: 0;
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+
+.button-active,
+.button:active,
+button-active {
+  box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+  border-color: #000\9;
+}
+
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active,
+button[disabled] {
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.button-hidden {
+  display: none;
+}
+
+
+// Inputs
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+input {
+  &[type="submit"],
+  &[type="reset"],
+  &[type="button"] {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: $secondary-color;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: $global-radius;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+}
+
+input {
+  &[type="submit"]:hover,
+  &[type="reset"]:hover,
+  &[type="button"]:hover {
+    color: $dark-grey;
+    border-color: lighten($dark-grey, 33.3%);
+    outline: 0;
+  }
+}
+
+input {
+  &[type="submit"]:focus,
+  &[type="reset"]:focus,
+  &[type="button"]:focus {
+    color: $dark-grey;
+    border-color: lighten($dark-grey, 33.3%);
+    outline: 0;
+  }
+}
+
+input {
+  &[type="submit"].button-primary,
+  &[type="reset"].button-primary,
+  &[type="button"].button-primary {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+input {
+  &[type="submit"].button-primary:hover,
+  &[type="reset"].button-primary:hover,
+  &[type="button"].button-primary:hover {
+    color: #fff;
+    background-color: $link-color;
+    border-color: $link-color;
+  }
+}
+
+input {
+  &[type="submit"].button-primary:focus,
+  &[type="reset"].button-primary:focus,
+  &[type="button"].button-primary:focus {
+    color: #fff;
+    background-color: $link-color;
+    border-color: $link-color;
+  }
+  &[type="email"],
+  &[type="number"],
+  &[type="search"],
+  &[type="text"],
+  &[type="tel"],
+  &[type="url"],
+  &[type="password"] {
+    height: 38px;
+    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+    background-color: #fff;
+    border: 1px solid lighten($border-color, 8.8%);
+    border-radius: $global-radius;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+}

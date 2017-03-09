@@ -1,0 +1,65 @@
+/**
+ * @file Tabs
+ * @author musicode
+ */
+
+
+tab-size(size)
+
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+
+ui-tab()
+
+    display inline-block
+    position relative
+    text-align center
+    white-space nowrap
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+        ui-disabled-cursor()
+
+    {$selector-hover}
+        ui-transition('background-color, border-color, color')
+
+
+ui-tabs()
+
+    color inherit
+    user-select none
+
+    ui-fluid()
+
+    ui-collection(
+        selector-item: $selector-tab,
+        hash: $tabs-size-hash,
+        each: @(size) {
+            > {$selector-tab} {
+                tab-size(size)
+            }
+        }
+    )
+
+    ui-variant(
+        hash: $tabs-brand-hash,
+        each: @(brand, name) {
+            > {$selector-tab} {
+
+                ui-set('color', brand['color'])
+
+                {$selector-hover} {
+                    ui-set('color', brand['color-hover'])
+                }
+                {$selector-active} {
+                    ui-set('color', brand['color-active'])
+                }
+                {$selector-checked} {
+                    ui-set('color', brand['color-checked'])
+                }
+            }
+        }
+    )
+

@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+/*
+
+Desktop HD: 1200px
+Desktop: 1000px
+Tablet: 750px
+Phablet: 550px
+Mobile: 400px
+
+ */
+/*
+
+<style media="value">
+screen  计算机屏幕（默认值）。
+tty 电传打字机以及使用等宽字符网格的类似媒介。
+tv  电视类型设备（低分辨率、有限的屏幕翻滚能力）。
+projection  放映机。
+handheld  手持设备（小屏幕、有限的带宽）。
+print 打印预览模式 / 打印页。
+braille 盲人用点字法反馈设备。
+aural 语音合成器。
+all 适合所有设备。
+
+media type的浏览器支持
+IE5.5/6/7不支持在@import中使用媒体类型
+Safari/firefox只支持all,screen,print三种类型(包括iphone)
+Opera 完全支持
+Opera mini  支持handheld，未指定则使用screen
+Windows Mobile系统中的IE支持handheld，其它支持不明…
+
+media query的浏览器支持：
+IE 9以下不支持
+Firefox 3.5+(Gecko 1.9.1+)支持
+Opera 9.5+完全支持
+Opera mini 5支持
+webkit 支持大部分属性(safari 3.0的内核版本是522，iPhone 1代的safari的内核版本是524，webkit大概从这个时候开始支持media query，但是对部分属性比如projection支持不好)
+iPhone OS 3.2之前的版本不支持orientation属性，iPad和iPhone 4支持该属性。
+iPhone Safari不支持orientation(iPhone 4支持)
+
+检测iPhone safari：
+<link media="only screen and (max-device-width: 480px)" href="style.css">
+
+not：排除某种制定的媒体类型
+@media not print and (color){ }
+only：指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器：
+@media only screen and (color){ }
+
+ */
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+.button,
+button {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #555555;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 3rem;
+  padding: 0 2.5rem;
+  line-height: 3rem;
+  letter-spacing: .1rem;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-user-drag: none;
+  user-select: none;
+  zoom: 1; }
+
+/* Firefox: Get rid of the inner focus border */
+.button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.button-hover,
+.button:hover,
+button:hover {
+  color: #333;
+  border-color: #888888;
+  outline: 0;
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }
+
+.button-focus,
+.button:focus,
+button:focus {
+  color: #333;
+  border-color: #888888;
+  outline: 0;
+  /* csslint ignore:start */
+  filter: alpha(opacity=90);
+  /* csslint ignore:end */
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1)); }
+
+.button-active,
+.button:active,
+button-active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  border-color: #000\9; }
+
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active,
+button[disabled] {
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none; }
+
+.button-hidden {
+  display: none; }
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+  display: inline-block;
+  height: 3rem;
+  padding: 0 2.5rem;
+  color: #555555;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 3rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+  color: #333;
+  border-color: #888888;
+  outline: 0; }
+
+input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+  color: #333;
+  border-color: #888888;
+  outline: 0; }
+
+input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  color: #fff;
+  background-color: #33c3f0;
+  border-color: #33c3f0; }
+
+input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover {
+  color: #fff;
+  background-color: #1eaedb;
+  border-color: #1eaedb; }
+
+input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+  color: #fff;
+  background-color: #1eaedb;
+  border-color: #1eaedb; }
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
+  height: 3rem;
+  padding: .6rem 1rem;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+/*csslint outline-none:false*/
+.button-xsmall {
+  font-size: 70%; }
+
+.button-small {
+  font-size: 85%; }
+
+.button-large {
+  font-size: 110%; }
+
+.button-xlarge {
+  font-size: 125%; }
+
+.button.button-primary,
+button.button-primary {
+  color: #fff;
+  background-color: #33c3f0;
+  border-color: #33c3f0; }
+
+.button.button-primary:hover,
+button.button-primary:hover {
+  color: #fff;
+  background-color: #1eaedb;
+  border-color: #1eaedb; }
+
+.button.button-primary:focus,
+button.button-primary:focus {
+  color: #fff;
+  background-color: #1eaedb;
+  border-color: #1eaedb; }
+
+.button-primary,
+.button-selected,
+a.button-primary,
+a.button-selected {
+  background-color: #0078e7;
+  color: #fff; }
+
+.button-green {
+  background-color: #16bb51;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #16741d; }
+
+.button-red {
+  background: red;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #aa2e17; }
+
+.button-yellow {
+  background: #ffec0f;
+  color: #928020;
+  border: 1px solid #c9bd34;
+  text-shadow: -1px 1px 1px white; }
+
+.button-wedding:hover,
+.button-wedding:focus {
+  background-color: #555;
+  color: #eee; }
+
+.button-wedding:active {
+  background-color: #222;
+  color: #fff;
+  box-shadow: none; }
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+
+.button-success {
+  background: #1cb841;
+  /* this is a green */ }
+
+.button-error {
+  background: #ca3c3c;
+  /* this is a maroon */ }
+
+.button-warning {
+  background: #df7514;
+  /* this is an orange */ }
+
+.button-secondary {
+  background: #42b8dd;
+  /* this is a light blue */ }

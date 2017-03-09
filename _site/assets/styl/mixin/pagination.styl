@@ -1,0 +1,97 @@
+/**
+ * @file Pagination
+ * @author musicode
+ */
+
+ui-pagination()
+
+    ul&
+        list-reset()
+
+    color inherit
+
+    ui-collection(
+        selector-item: $selector-pagination-item,
+        hash: $pagination-size-hash,
+        each: @(size, name) {
+            > {$selector-pagination-item} {
+                ui-set('font-size', size['font'])
+            }
+            > {$selector-button} {
+                button-size(size)
+            }
+            ui-variant(
+                hash: $pagination-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-button} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
+        }
+    )
+
+    ui-variant(
+        hash: $pagination-brand-hash,
+        each: @(brand) {
+            > {$selector-button} {
+
+                button-brand(
+                    bg: brand['bg'],
+                    border: brand['border'],
+                    color: brand['color']
+                )
+
+                {$selector-hover} {
+                    button-hover(
+                        bg: brand['bg-hover'],
+                        border: brand['border-hover'],
+                        color: brand['color-hover']
+                    )
+                }
+                {$selector-active} {
+                    button-active(
+                        bg: brand['bg-active'],
+                        border: brand['border-active'],
+                        color: brand['color-active']
+                    )
+                }
+                {$selector-checked} {
+                    button-active(
+                        bg: brand['bg-checked'],
+                        border: brand['border-checked'],
+                        color: brand['color-checked']
+                    )
+                }
+                {$selector-disabled} {
+                    button-disabled(
+                        bg: brand['bg-disabled'],
+                        border: brand['border-disabled'],
+                        color: brand['color-disabled']
+                    )
+                }
+            }
+        }
+    )
+
+
+ui-pagination-tight()
+
+    ui-collection-tight(
+        selector-item: $selector-pagination-item,
+        gap-item: -1px
+    )
+
+    > {$selector-button}
+        {$selector-checked}
+            position relative
+            z-index $zindex-tiny
+
+
+
+ui-pagination-item()
+
+    display inline-block
+    ui-checked-cursor()
+
+

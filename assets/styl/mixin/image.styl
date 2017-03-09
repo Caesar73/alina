@@ -1,0 +1,93 @@
+/**
+ * @file Image
+ * @author musicode
+ */
+
+image-reset()
+
+    a&
+        text-decoration none
+
+
+image-size(size)
+
+    ui-set('width', size['width'])
+    ui-set('height', size['height'])
+
+image-radius(radius)
+
+    &,
+    > img,
+    &:after
+        border-radius radius
+
+ui-image()
+
+    display inline-block
+    font-size 0
+    text-align center
+
+    > img
+        display block
+
+    image-reset()
+
+    ui-variant(
+        hash: $image-size-hash,
+        each: image-size
+    )
+
+
+
+ui-images()
+
+    ui-collection(
+        selector-item: $selector-image,
+        hash: $image-size-hash,
+        each: @(size) {
+            > {$selector-image} {
+                image-size(size)
+            }
+        }
+    )
+
+
+ui-image-link()
+
+    position relative
+
+    &:after
+        content ' '
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+
+        if !$support-ie or !$support-ie8
+            background-color rgba(0,0,0,0)
+        else
+            background-color #000
+            ui-opacity(0)
+
+    {$selector-hover}
+        &:after
+            if !$support-ie or !$support-ie8
+                background-color rgba(0,0,0,$image-link-hover-mask-opacity)
+                ui-transition('background-color')
+            else
+                ui-opacity($image-link-hover-mask-opacity)
+                ui-transition('opacity')
+
+ui-image-round()
+    image-radius(50%)
+
+ui-image-radius()
+
+    ui-variant(
+        hash: $image-size-hash,
+        each: @(size) {
+            image-radius(size['radius'])
+        }
+    )
+

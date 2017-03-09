@@ -1,1 +1,43 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: Alina
+description: "Caesar Zhang's Alina"
+url:         "https://caesar73.github.io/alina/"
+baseurl: "/alina" # the subpath of your site, e.g. /blog
+date_format: "%b %-d, %Y"
+email: rayanddoctor@126.com
+public_key_url: "https://raw.pastebin.com/LINK-TO-PUBLIC-KEY"
+
+
+# Enable one of these styles by removing #. Style will be applied only after restarting the build or serve.
+#style: styles-2
+#style: styles-3
+#style: styles-4
+#style: styles-5
+#style: styles-6
+
+
+#Profile information
+name: Caesar Zhang
+tagline: Front End Developer
+pic: profile.jpg  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+
+
+#sidebar links
+email: rayanddoctor@126.com
+phone: 0086 13581915637
+website: www.zhangjiayi.net #do not add http://blog.webjeda.com
+linkedin:
+github: Caesar73
+twitter: '@twitter'
+
+#Update all the sections by editing the files inside _includes folder.
+
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+
+
+
+

@@ -1,0 +1,140 @@
+/**
+ * @file Dropdown
+ * @author musicode
+ */
+
+dropdown-size(size, name)
+
+    > {$selector-text},
+    > {$selector-button},
+    > {$selector-dropdown-menu} > {$selector-dropdown-menu-item}
+        ui-set('font-size', size['font'])
+        ui-set('line-height', size['line-height'])
+
+    > {$selector-text}
+        ui-set('padding-left', size['padding-horizontal'])
+        ui-set('padding-right', size['padding-horizontal'])
+
+    > {$selector-button},
+    > {$selector-dropdown-menu} > {$selector-dropdown-menu-item}
+        ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+    > {$selector-text},
+    > {$selector-button}
+        ui-ellipsis()
+        > {$selector-icon}
+            ui-set('line-height', size['line-height'])
+            ui-set('margin-left', size['margin-horizontal'])
+
+    ui-variant(
+        hash: $dropdown-radius-hash[name],
+        each: @(radius, name) {
+            > {$selector-button},
+            > {$selector-dropdown-menu} {
+                ui-set('border-radius', radius)
+            }
+        }
+    )
+
+
+ui-dropdown()
+
+    display inline-block
+    position relative
+    text-align left
+
+    > {$selector-text},
+    > {$selector-button}
+        ui-fluid()
+        > {$selector-icon}
+            float right
+
+    > {$selector-text}
+        > {$selector-icon}
+            user-select none
+            if $support-mouse
+                ui-set('cursor', $cursor-clickable)
+
+    > {$selector-button}
+        text-align left
+
+    ui-variant(
+        hash: $dropdown-size-hash,
+        each: dropdown-size
+    )
+
+
+ui-dropdowns()
+
+    ui-collection(
+        selector-item: $selector-dropdown,
+        hash: $dropdown-size-hash,
+        each: @(size, name) {
+            > {$selector-dropdown} {
+                dropdown-size(size, name)
+            }
+        }
+    )
+
+
+ui-dropdown-menu()
+
+    display none
+    overflow-x hidden
+    overflow-y auto
+
+    position absolute
+    left 0
+    right 0
+
+    ui-set('background-color', $dropdown-menu-bg)
+    ui-set('padding', $dropdown-menu-padding-vertival $dropdown-menu-padding-horizontal)
+    ui-set('max-height', $dropdown-menu-max-height)
+    ui-set('box-shadow', $dropdown-menu-box-shadow)
+    ui-set('z-index', $zindex-small)
+
+    if $dropdown-menu-border is a 'rgba'
+        border 1px solid $dropdown-menu-border
+
+
+ui-dropdown-menu-item()
+
+    display block
+    user-select none
+    margin 0
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+
+    if $dropdown-menu-item-divider is a 'rgba'
+        + {$selector-dropdown-menu-item}
+            border-top 1px solid $dropdown-menu-item-divider
+
+    ui-transition('background-color')
+
+    {$selector-hover}
+        ui-set('background-color', $dropdown-menu-item-bg-hover)
+
+    {$selector-active}
+        ui-set('background-color', $dropdown-menu-item-bg-active)
+
+    {$selector-checked}
+        ui-set('background-color', $dropdown-menu-item-bg-checked)
+
+
+ui-dropdown-opened-button()
+
+    ui-variant(
+        hash: $dropdown-brand-hash,
+        each: @(brand) {
+            ui-set('background-color', brand['bg-active'])
+            ui-set('border-color', brand['border-active'])
+            ui-set('color', brand['color-active'])
+        }
+    )
+
+
+ui-dropdown-opened-menu()
+
+    display block
+

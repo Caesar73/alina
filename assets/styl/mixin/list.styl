@@ -1,0 +1,69 @@
+/**
+ * @file 列表
+ * @author musicode
+ */
+
+list-reset()
+
+    list-style none
+    padding 0
+    margin 0
+
+
+ui-list()
+
+    ul&
+        list-reset()
+
+    color inherit
+    text-align left
+
+    ui-set('background-color', $list-bg)
+
+    ui-variant(
+        hash: $list-size-hash,
+        each: @(size, name) {
+
+            > {$selector-list-item} {
+                ui-set('line-height', size['line-height'])
+                ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+            }
+
+            ui-variant(
+                hash: $list-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                    > {$selector-list-item} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
+        }
+    )
+
+    ui-variant(
+        hash: $list-brand-hash,
+        each: @(brand) {
+            > {$selector-list-item} {
+                ui-set('color', brand['color'])
+
+                &{$selector-checked} {
+                    ui-set('background-color', brand['bg-checked'])
+                    ui-set('color', brand['color-checked'])
+                }
+            }
+        }
+    )
+
+
+ui-list-item()
+
+    display block
+
+    if $list-item-divider is a 'rgba'
+        + {$selector-list-item}
+            border-top 1px solid $list-item-divider
+
+    > {$selector-floated}
+        float right
+

@@ -1,0 +1,161 @@
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+
+/*csslint outline-none:false*/
+
+// Button's Style
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button,
+button {
+  // text-transform: uppercase;
+}
+
+.button-xsmall {
+  font-size: 70%;
+}
+
+.button-small {
+  font-size: 85%;
+}
+
+.button-large {
+  font-size: 110%;
+}
+
+.button-xlarge {
+  font-size: 125%;
+}
+
+
+.button.button-primary,
+button.button-primary {
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.button.button-primary:hover,
+button.button-primary:hover {
+  color: #fff;
+  background-color: $link-color;
+  border-color: $link-color;
+}
+
+.button.button-primary:focus,
+button.button-primary:focus {
+  color: #fff;
+  background-color: $link-color;
+  border-color: $link-color;
+}
+
+.button-primary,
+.button-selected,
+a.button-primary,
+a.button-selected {
+  background-color: rgb(0, 120, 231);
+  color: #fff;
+}
+
+.button-green {
+  background-color: #16bb51;
+  border-radius: 6px;
+  color: white;
+  font-weight:bold;
+  text-shadow: 0 1px 1px rgb(22, 116, 29);
+}
+
+.button-red {
+  background: red;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(170, 46, 23);
+}
+
+.button-yellow {
+  background: rgb(255, 236, 15);
+  color: rgb(146, 128, 32);
+  border: 1px solid rgb(201, 189, 52);
+  text-shadow: -1px 1px 1px white;
+}
+
+.button-wedding:hover,
+.button-wedding:focus {
+  background-color: #555;
+  color: #eee;
+}
+
+.button-wedding:active {
+  background-color: #222;
+  color: #fff;
+  box-shadow: none;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+  background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+  background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+// Button's Group
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// .button-group {
+//   letter-spacing:  -0.31rem; /* Webkit: collapse white-space between units */
+//   *letter-spacing: normal; /* reset IE < 8 */
+//   *word-spacing:   -0.43rem; /* IE < 8: collapse white-space between units */
+//   text-rendering:  optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+// }
+
+// .opera-only :-o-prefocus,
+// .button-group {
+//   word-spacing: -0.43rem;
+// }
+
+// .button-group .button {
+//   margin: 0;
+//   border-radius: 0;
+//   border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
+//   border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+//   letter-spacing: normal;
+//   word-spacing:   normal;
+//   vertical-align: top;
+//   text-rendering: auto;
+// }
+
+// .button-group .button:first-child {
+//   border-top-left-radius: 2px;
+//   border-bottom-left-radius: 2px;
+// }
+
+// .button-group .button:last-child {
+//   border-top-right-radius: 2px;
+//   border-bottom-right-radius: 2px;
+//   border-right: none;
+// }
+

@@ -1,0 +1,158 @@
+/**
+ * @file Button
+ * @author musicode
+ */
+
+button-reset()
+
+    a&
+        ui-set('color', $brand-text)
+        text-decoration none
+
+    button&
+        background-color transparent
+        outline 0
+
+button-size(size)
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+button-brand(bg, border, color)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
+    ui-set('color', color)
+
+button-hover(bg, border, color = null)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
+    if color is a 'rgba'
+        ui-set('color', color)
+
+button-active(bg, border, color = null)
+    ui-set('background-color', bg)
+    ui-set('border-color', border)
+    ui-set('box-shadow', $button-box-shadow-active)
+    if color is a 'rgba'
+        ui-set('color', color)
+
+button-disabled(bg, border, color)
+    ui-set('background-color', bg, true)
+    ui-set('border-color', border, true)
+    ui-set('color', color, true)
+    box-shadow none !important
+
+button-brand-variant(brand)
+    button-brand(
+        bg: brand['bg'],
+        border: brand['border'],
+        color: brand['color']
+    )
+    {$selector-hover} {
+        button-hover(
+            bg: brand['bg-hover'],
+            border: brand['border-hover'],
+            color: brand['color-hover']
+        )
+    }
+    {$selector-active} {
+        button-active(
+            bg: brand['bg-active'],
+            border: brand['border-active'],
+            color: brand['color-active']
+        )
+    }
+    {$selector-disabled} {
+        button-disabled(
+            bg: brand['bg-disabled'],
+            border: brand['border-disabled'],
+            color: brand['color-disabled']
+        )
+    }
+
+ui-button()
+
+    border 1px solid transparent
+    display inline-block
+    text-align center
+    white-space nowrap
+    user-select none
+
+    button-reset()
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+        ui-disabled-cursor()
+
+    {$selector-hover}
+        ui-transition('background-color, border-color, color')
+
+    {$selector-disabled}
+        ui-set('color', $brand-text-disabled, true)
+
+    ui-variant(
+        hash: $button-brand-hash,
+        each: button-brand-variant
+    )
+
+    ui-variant(
+        hash: $button-size-hash,
+        each: @(size, name) {
+            button-size(size)
+            ui-variant(
+                hash: $button-radius-hash[name],
+                each: @(radius, name) {
+                    ui-set('border-radius', radius)
+                }
+            )
+        }
+    )
+
+    > {$selector-text}
+        font inherit
+
+
+ui-button-outline()
+
+    ui-variant(
+        hash: $button-outline-brand-hash,
+        each: button-brand-variant
+    )
+
+
+ui-buttons()
+
+    ui-collection(
+        selector-item: $selector-button,
+        hash: $button-size-hash,
+        each: @(size, name) {
+
+            > {$selector-button} {
+                button-size(size)
+            }
+
+            ui-variant(
+                hash: $button-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-button} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
+
+        }
+    )
+
+
+ui-buttons-tight()
+
+    ui-collection-tight(
+        selector-item: $selector-button,
+        gap-item: -1px
+    )
+
+    ui-collection-tight-side-radius(
+        selector-item: $selector-button,
+        hash: $button-radius-hash,
+    )
+

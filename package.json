@@ -1,0 +1,31 @@
+{
+  "name": "gulp4-cli-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp4-cli-server"
+  },
+  "author": "Caesar",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "dependencies": {
+    "gulp4": "4.0.1",
+    "del": "2.2.2",
+    "gulp-rename": "1.2.2",
+    "gulp-uglify": "2.0.1",
+    "gulp-clean-css": "3.0.3",
+    "gulp-babel": "6.1.2",
+    "gulp-concat": "2.6.1",
+
+    "gulp-ruby-sass": "2.1.1",
+    "gulp-sass" : "3.1.0",
+    "gulp-less" : "3.3.0",
+
+    "gulp-scss-lint": "0.4.0",
+    "gulp-scss-lint-stylish": "1.0.1",
+    "gulp-sourcemaps" : "2.4.1"
+  }
+}

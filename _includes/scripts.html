@@ -1,0 +1,54 @@
+<!-- Javascript -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- custom js
+<script type="text/javascript" src="{{site.baseurl}}/build/js/main.js"></script>
+-->
+<script>
+;(function (window, document, $) {
+  var container = $('#container');
+  var layout    = container;
+  var menu      = container.find('.menu');
+  var menuLink  = container.find('#switch');
+  var content   = container.find('.main');
+
+  container
+  .on('click', '#switch', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    toggleAll(e);
+  })
+  .on('click', '.main', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    if ( menu.hasClass('active') ) {
+      toggleAll(e);
+    }
+  })
+  ;
+
+  function toggleClass (element, className) {
+    console.log(element);
+    var el = element;
+    var c  = className;
+    if ( el.hasClass(c)) {
+      el.removeClass(c);
+    }
+    else {
+      el.addClass(c);
+    }
+
+  }
+
+  function toggleAll (e) {
+    e.preventDefault();
+
+    var active = 'active';
+    toggleClass(layout,   active);
+    toggleClass(menu,     active);
+    toggleClass(menuLink, active);
+
+  }
+
+})(this, this.document, jQuery);
+
+</script>

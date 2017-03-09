@@ -1,0 +1,40 @@
+/**
+ * @file Text
+ * @author musicode
+ */
+
+text-reset()
+
+    button&
+        background-color transparent
+        outline 0
+        border 0
+        padding 0
+
+
+text-size(size)
+
+    ui-set('font-size', size['font'])
+
+
+ui-text()
+
+    text-reset()
+
+    ui-variant(
+        hash: $text-size-hash,
+        each: text-size
+    )
+
+
+ui-texts()
+
+    ui-collection(
+        selector-item: $selector-text,
+        hash: $text-size-hash,
+        each: @(size) {
+            > {$selector-text} {
+                text-size(size)
+            }
+        }
+    )

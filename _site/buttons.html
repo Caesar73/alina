@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<title>Alina</title>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A beautiful framewok named Alina">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--[if lte IE 8]>
+  <link rel="stylesheet" href="/alina/css/ie8.css" />
+<![endif]-->
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="/alina/css/ie9.css" />
+<![endif]-->
+<link id="main-style" rel="stylesheet" href="/alina/build/sass/alina.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<script type="text/javascript">
+;(function(){
+    var calc = function () {
+        var docElement = document.documentElement;
+        var clientWidthValue = docElement.clientWidth > 480 ? 480 : docElement.clientWidth;
+        docElement.style.fontSize = 10*(clientWidthValue/320) + 'px';
+    }
+    calc();
+    window.addEventListener('resize',calc);
+})();
+</script>
+<script>
+//console.log(document.body.className);
+//alert(navigator.userAgent);
+;(function(ua, w, d, undefined) {
+    var _ua = ua.toLowerCase();
+    //alert(_ua);
+    if ( (/iphone|ipod|ipad/).test(_ua) ) {
+        d.body.className = 'apple mobile';
+        return;
+    }
+    else if ( (/android|blackberry|opera mini|iemobile/).test(_ua) ) {
+        d.body.className = 'android mobile';
+        if ( _ua.indexOf('micromessenger') > -1 ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+    else if ( (/mobile/).test(_ua) ) {
+        d.body.className = 'mobile';
+        if ( (_ua.indexOf('micromessenger') > -1) || (_ua.indexOf('baidu') > -1) ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+    else {
+        d.body.className = 'pc';
+        if ( _ua.indexOf('micromessenger') > -1 ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+
+})(navigator.userAgent || navigator.vendor || window.opera, window, document);
+//console.log(document.body.className);
+//alert(document.body.className);
+</script>
+
+<div id="container" class="layout wrapper">
+
+    
+<!-- Menu toggle -->
+<a href="#" id="switch" class="menu-switch">
+  <!-- Hamburger icon -->
+  <span></span>
+</a>
+<div class="menu">
+  <div class="menu side-menu">
+      <a class="menu-heading side-menu-heading" href="/alina/">Alina</a>
+
+      <ul class="menu-list">
+          <li class="menu-item"><a href="/alina/buttons.html" class="menu-link">Buttons</a></li>
+          <li class="menu-item"><a href="/alina/forms.html" class="menu-link">Forms</a></li>
+          <li class="menu-item"><a href="/alina/grids.html" class="menu-link">Grids</a></li>
+          <li class="menu-item"><a href="/alina/menus.html" class="menu-link">Menus</a></li>
+          <li class="menu-item"><a href="/alina/tables.html" class="menu-link">Tables</a></li>
+          <li class="menu-item"><a href="/alina/forms.html" class="menu-link">Forms</a></li>
+      </ul>
+  </div>
+</div>
+
+
+
+    <div class="main">
+        <div class="header">
+            <h1>Page Title</h1>
+            <h2>A subtitle for your page goes here</h2>
+        </div>
+
+        <div class="content">
+
+  <h2>Regular Buttons</h2>
+  <p>
+    <button class="button">A Regular Button</button>
+    <a class="button" href="#">An anchor Button</a>
+  </p>
+
+    <h2>Disabled Buttons</h2>
+    <p>
+        <button class="button button-disabled" disabled>A Regular Button</button>
+        <a class="button button-disabled" href="#">An anchor Button</a>
+    </p>
+
+    <h2>Active Buttons</h2>
+    <p>
+        <button class="button button-active">A Regular Button</button>
+        <a class="button button-active" href="#">An anchor Button</a>
+    </p>
+
+    <h2>Primary/Selected Buttons</h2>
+    <p>
+        <button class="button button-primary">A Regular Button</button>
+        <a class="button button-primary" href="#">An anchor Button</a>
+    </p>
+
+    <h2>Customizing Buttons</h2>
+    <p>
+        <button class="button button-green">A Custom Button</button>
+        <a class="button button-green" href="#">An anchor Button</a>
+    </p>
+    <p>
+        <button class="button button-red">Another custom Button</button>
+        <a class="button button-red" href="#">Custom Button</a>
+    </p>
+    <p>
+        <button class="button button-yellow">Another custom Button</button>
+        <a class="button button-yellow" href="#">Custom Button</a>
+    </p>
+
+    <p>
+        <button class="button button-wedding">
+            <i class="fa fa-film"></i>
+            Start Playing Movie
+        </button>
+
+        <a class="button button-wedding" href="#">
+            <i class="fa fa-film"></i>
+            Start Playing Movie
+        </a>
+    </p>
+
+    <h2>Primary Form Buttons</h2>
+    <p>
+        <a class="button button-primary" href="#">Anchor</a>
+        <button class="button button-primary">Button</button>
+        <input type="submit" class="button button-primary" value="Submit">
+        <input type="button" class="button button-primary" value="Input Button">
+        <input type="reset" class="button button-primary" value="Reset">
+    </p>
+
+    <h2>Primary Form Buttons (Custom Fonts)</h2>
+    <p class="custom-fonts">
+        <a class="button button-primary" href="#">Anchor</a>
+        <button class="button button-primary">Button</button>
+        <input type="submit" class="button button-primary" value="Submit">
+        <input type="button" class="button button-primary" value="Input Button">
+        <input type="reset" class="button button-primary" value="Reset">
+    </p>
+
+<!--
+    <h2>Button Groups</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="button-group">
+        <input type="submit" class="button button-primary" value="Submit">
+        <input type="button" class="button button-primary" value="Input Button">
+        <input type="reset" class="button button-primary" value="Reset">
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="button-group">
+        <a href="#" class="button button-primary" value="Submit">Testing</a>
+        <a href="#" class="button button-primary" value="Input Button">Button</a>
+        <a href="#" class="button button-primary button-active" value="Reset">Groups</a>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="button-group">
+        <button class="button">Lorem</button>
+        <button class="button button-active">Ipsum</button>
+        <button class="button">Dolor</button>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+-->
+
+</div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="text-center">
+    <small class="copyright">Designed <i class="fa fa-heart"></i> by <a href="http://www.zhangjiayi.net" target="_blank" rel="nofollow">Caesar</a></small>
+  </div><!--//container-->
+</footer><!--//footer-->
+<!-- Javascript -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- custom js
+<script type="text/javascript" src="/alina/build/js/main.js"></script>
+-->
+<script>
+;(function (window, document, $) {
+  var container = $('#container');
+  var layout    = container;
+  var menu      = container.find('.menu');
+  var menuLink  = container.find('#switch');
+  var content   = container.find('.main');
+
+  container
+  .on('click', '#switch', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    toggleAll(e);
+  })
+  .on('click', '.main', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    if ( menu.hasClass('active') ) {
+      toggleAll(e);
+    }
+  })
+  ;
+
+  function toggleClass (element, className) {
+    console.log(element);
+    var el = element;
+    var c  = className;
+    if ( el.hasClass(c)) {
+      el.removeClass(c);
+    }
+    else {
+      el.addClass(c);
+    }
+
+  }
+
+  function toggleAll (e) {
+    e.preventDefault();
+
+    var active = 'active';
+    toggleClass(layout,   active);
+    toggleClass(menu,     active);
+    toggleClass(menuLink, active);
+
+  }
+
+})(this, this.document, jQuery);
+
+</script>
+</body>
+</script>
+</html>
+

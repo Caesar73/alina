@@ -1,0 +1,79 @@
+/**
+ * @file Table
+ * @author musicode
+ */
+
+ui-table()
+
+    color inherit
+    width 100%
+    table-layout fixed
+
+    > thead
+        ui-set('background-color', $table-head-bg)
+
+        > tr > th
+            font-weight normal
+            ui-set('font-size', $table-head-font-size)
+            ui-set('text-align', $table-head-align)
+            ui-set('padding', $table-head-cell-padding-vertical $table-head-cell-padding-horizontal)
+
+    > tbody,
+    > tfoot
+        ui-set('background-color', $brand-bg)
+
+        > tr
+            ui-variant(
+                hash: $table-brand-hash,
+                each: @(brand) {
+                    ui-set('background-color', brand['bg'])
+                    ui-set('color', brand['color'])
+                }
+            )
+
+            > td
+                ui-set('font-size', $table-body-font-size)
+                ui-set('text-align', $table-body-align)
+                ui-set('padding', $table-body-cell-padding-vertical $table-body-cell-padding-horizontal)
+
+
+ui-table-striped()
+
+    > tbody > tr:nth-child(even)
+        ui-set('background-color', $table-body-even-row-bg)
+
+
+ui-table-row-bordered()
+
+    > thead > tr
+        border-bottom: 1px solid $brand-border;
+
+    > tbody,
+    > tfoot
+        > tr + tr
+            border-top: 1px solid $brand-divider
+
+
+ui-table-col-bordered()
+
+    > thead > tr > th + th
+        border-left 1px solid $brand-border
+
+    > tbody,
+    > tfoot
+        > tr > td + td
+            border-left 1px solid $brand-divider
+
+
+ui-table-cell-bordered()
+
+    > thead > tr > th
+        border 1px solid $brand-border
+
+    > tbody,
+    > tfoot
+        > tr > td
+            border 1px solid $brand-divider
+
+
+

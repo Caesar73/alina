@@ -1,0 +1,112 @@
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+
+// Base Styles
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// NOTE
+// html is set to 62.5% so that all the REM measurements throughout Alina
+// are based on 10px sizing. So basically 1.5rem = 15px :)
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size:   1.5em; // currently ems cause chrome bug misinterpreting rems on body element
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: $font-family;
+  color:       $font-color;
+}
+
+// Links
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $link-color;
+  &:hover {
+    color: darken($link-color, 5%);
+  }
+}
+
+// Misc
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+hr {
+  margin-top:    3rem;
+  margin-bottom: 3.5rem;
+  border-width:  0;
+  border-top:    1px solid $light-grey;
+}
+
+// Hidden
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+/**
+ * Always hide an element when it has the `hidden` HTML attribute.
+ */
+
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+// clearfix
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+/**
+ * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining
+ * aspect ratio.
+ */
+.img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Clearfix
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.cf:after,
+.clearfix:after {
+    clear: both;
+}
+
+.cf:after,
+.cf:before,
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: "";
+}
+
+
+// Spacing
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+button,
+.button {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem;
+}
+

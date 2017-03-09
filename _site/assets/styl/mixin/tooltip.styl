@@ -1,0 +1,114 @@
+/**
+ * @file Tooltip
+ * @author musicode
+ */
+
+ui-tooltip()
+
+    position absolute
+    display none
+    border 1px solid transparent
+    word-wrap break-word
+
+    ui-set('z-index', $zindex-small)
+    ui-set('border-radius', $tooltip-radius-size)
+    ui-set('font-size', $tooltip-font-size)
+    ui-set('padding', $tooltip-padding-vertical $tooltip-padding-horizontal)
+    ui-set('box-shadow', $tooltip-box-shadow)
+
+    &:before,
+    &:after
+        position absolute
+        content ' '
+        border 0 solid transparent
+
+    ui-variant(
+        hash: $tooltip-brand-hash,
+        each: @(brand, name) {
+
+            ui-set('background-color', brand['bg'])
+            ui-set('border-color', brand['border'])
+            ui-set('color', brand['color'])
+
+            &:before {
+                ui-set('border-color', brand['border'])
+            }
+            &:after {
+                ui-set('border-color', brand['bg'])
+            }
+
+        }
+    )
+
+
+ui-tooltip-top()
+
+    &:before,
+    &:after
+        left 50%
+        margin-left -1 * $tooltip-arrow-size
+
+        border-width $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size
+        border-left-color transparent !important;
+        border-right-color transparent !important
+
+    &:before
+        bottom -1 * $tooltip-arrow-size
+
+    &:after
+        bottom -1 * $tooltip-arrow-size + 1
+
+
+ui-tooltip-right()
+
+    &:before,
+    &:after
+        top 50%
+        margin-top -1 * $tooltip-arrow-size
+
+        border-width $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0
+        border-top-color transparent !important
+        border-bottom-color transparent !important
+
+    &:before
+        left -1 * $tooltip-arrow-size
+
+    &:after
+        left -1 * $tooltip-arrow-size + 1
+
+
+ui-tooltip-bottom()
+
+    &:before,
+    &:after
+        left 50%
+        margin-left -1 * $tooltip-arrow-size
+
+        border-width 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size
+        border-left-color transparent !important
+        border-right-color transparent !important
+
+    &:before
+        top -1 * $tooltip-arrow-size
+
+    &:after
+        top -1 * $tooltip-arrow-size + 1
+
+
+ui-tooltip-left()
+
+    &:before,
+    &:after
+        top 50%
+        margin-top -1 * $tooltip-arrow-size
+
+        border-width $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size
+        border-top-color transparent !important
+        border-bottom-color transparent !important
+
+    &:before
+        right -1 * $tooltip-arrow-size
+
+    &:after
+        right -1 * $tooltip-arrow-size + 1
+

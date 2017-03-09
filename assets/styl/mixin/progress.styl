@@ -1,0 +1,66 @@
+/**
+ * @file Progress
+ * @author musicode
+ */
+
+ui-progress()
+
+    overflow hidden
+
+    if $progress-border is a 'rgba'
+        border 1px solid $progress-border
+
+    ui-set('background-color', $progress-bg)
+    ui-set('color', $progress-color)
+
+    ui-variant(
+        hash: $progress-brand-hash,
+        each: @(bg) {
+            > {$selector-progress-meter} {
+                ui-set('background-color', bg)
+            }
+        }
+    )
+
+    ui-variant(
+        hash: $progress-size-hash,
+        each: @(size, name) {
+
+            > {$selector-progress-meter} {
+                ui-set('font-size', size['font'])
+                ui-set('line-height', size['line-height'])
+
+                if $support-ie8 {
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
+
+                &:empty {
+                    ui-set('padding', size['padding-vertical'] 0)
+                }
+                &:not(:empty) {
+                    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+                }
+
+            }
+
+            ui-variant(
+                hash: $progress-radius-hash[name],
+                each: @(radius, name) {
+                    ui-set('border-radius', radius)
+
+                    > {$selector-progress-meter} {
+                        ui-set('border-radius', radius - 1)
+                    }
+                }
+            )
+
+        }
+    )
+
+
+
+ui-progress-meter()
+
+    display block
+    text-align right
+

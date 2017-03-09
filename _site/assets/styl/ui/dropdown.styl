@@ -1,0 +1,49 @@
+/**
+ * @file Dropdown
+ * @author musicode
+ */
+
++prefix-classes($ui-prefix)
+
+    {$selector-dropdown},
+    {$selector-dropup}
+        ui-dropdown()
+
+        > {$selector-dropdown-menu}
+            ui-dropdown-menu()
+            ui-set('margin-top', $dropdown-menu-gap)
+
+            > {$selector-dropdown-menu-item}
+                ui-dropdown-menu-item()
+
+            > a{$selector-dropdown-menu-item}
+                text-decoration none
+                ui-set('color', $brand-text)
+
+        > ul{$selector-dropdown-menu}
+            list-reset()
+            ui-set('margin-top', $dropdown-menu-gap)
+
+        &{$selector-opened}
+
+            > {$selector-button}
+                ui-dropdown-opened-button()
+
+            > {$selector-dropdown-menu}
+                ui-dropdown-opened-menu()
+
+    {$selector-dropup}
+        > {$selector-dropdown-menu}
+            top auto
+            bottom 100%
+            ui-set('margin-bottom', $dropdown-menu-gap)
+
+    {$selector-dropdowns}
+        ui-dropdowns()
+
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: $selector-dropdown,
+                gap-item: -1px
+            )
+

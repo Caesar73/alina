@@ -1,0 +1,223 @@
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+
+/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
+
+// Grid
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.ui-1,
+.ui-1-1,
+.ui-1-2,
+.ui-1-3,
+.ui-2-3,
+.ui-1-4,
+.ui-3-4,
+.ui-1-5,
+.ui-2-5,
+.ui-3-5,
+.ui-4-5,
+.ui-5-5,
+.ui-1-6,
+.ui-5-6,
+.ui-1-8,
+.ui-3-8,
+.ui-5-8,
+.ui-7-8,
+.ui-1-12,
+.ui-5-12,
+.ui-7-12,
+.ui-11-12,
+.ui-1-24,
+.ui-2-24,
+.ui-3-24,
+.ui-4-24,
+.ui-5-24,
+.ui-6-24,
+.ui-7-24,
+.ui-8-24,
+.ui-9-24,
+.ui-10-24,
+.ui-11-24,
+.ui-12-24,
+.ui-13-24,
+.ui-14-24,
+.ui-15-24,
+.ui-16-24,
+.ui-17-24,
+.ui-18-24,
+.ui-19-24,
+.ui-20-24,
+.ui-21-24,
+.ui-22-24,
+.ui-23-24,
+.ui-24-24 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.ui-1-24 {
+    width: 4.1667%;
+    *width: 4.1357%;
+}
+
+.ui-1-12,
+.ui-2-24 {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+
+.ui-1-8,
+.ui-3-24 {
+    width: 12.5000%;
+    *width: 12.4690%;
+}
+
+.ui-1-6,
+.ui-4-24 {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+
+.ui-1-5 {
+    width: 20%;
+    *width: 19.9690%;
+}
+
+.ui-5-24 {
+    width: 20.8333%;
+    *width: 20.8023%;
+}
+
+.ui-1-4,
+.ui-6-24 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.ui-7-24 {
+    width: 29.1667%;
+    *width: 29.1357%;
+}
+
+.ui-1-3,
+.ui-8-24 {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+
+.ui-3-8,
+.ui-9-24 {
+    width: 37.5000%;
+    *width: 37.4690%;
+}
+
+.ui-2-5 {
+    width: 40%;
+    *width: 39.9690%;
+}
+
+.ui-5-12,
+.ui-10-24 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+
+.ui-11-24 {
+    width: 45.8333%;
+    *width: 45.8023%;
+}
+
+.ui-1-2,
+.ui-12-24 {
+    width: 50%;
+    *width: 49.9690%;
+}
+
+.ui-13-24 {
+    width: 54.1667%;
+    *width: 54.1357%;
+}
+
+.ui-7-12,
+.ui-14-24 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+
+.ui-3-5 {
+    width: 60%;
+    *width: 59.9690%;
+}
+
+.ui-5-8,
+.ui-15-24 {
+    width: 62.5000%;
+    *width: 62.4690%;
+}
+
+.ui-2-3,
+.ui-16-24 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+
+.ui-17-24 {
+    width: 70.8333%;
+    *width: 70.8023%;
+}
+
+.ui-3-4,
+.ui-18-24 {
+    width: 75%;
+    *width: 74.9690%;
+}
+
+.ui-19-24 {
+    width: 79.1667%;
+    *width: 79.1357%;
+}
+
+.ui-4-5 {
+    width: 80%;
+    *width: 79.9690%;
+}
+
+.ui-5-6,
+.ui-20-24 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+
+.ui-7-8,
+.ui-21-24 {
+    width: 87.5000%;
+    *width: 87.4690%;
+}
+
+.ui-11-12,
+.ui-22-24 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+
+.ui-23-24 {
+    width: 95.8333%;
+    *width: 95.8023%;
+}
+
+.ui-1,
+.ui-1-1,
+.ui-5-5,
+.ui-24-24 {
+    width: 100%;
+}

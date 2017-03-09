@@ -1,0 +1,94 @@
+/**
+ * @file Label
+ * @author musicode
+ */
+
+label-reset()
+
+    a&
+        ui-set('color', $brand-text)
+        text-decoration none
+
+    button&
+        outline 0
+
+
+label-brand(brand)
+
+    ui-set('background-color', brand['bg'])
+    ui-set('border-color', brand['border'])
+    ui-set('color', brand['color'])
+
+
+label-size(size)
+
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+
+ui-label()
+
+    border 1px solid transparent
+    display inline-block
+    white-space nowrap
+
+    label-reset()
+
+    ui-variant(
+        hash: $label-brand-hash,
+        each: label-brand
+    )
+
+    ui-variant(
+        hash: $label-size-hash,
+        each: @(size, name) {
+            label-size(size)
+
+            ui-variant(
+                hash: $label-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                }
+            )
+        }
+    )
+
+    > {$selector-text}
+        font inherit
+
+
+ui-labels()
+
+    ui-collection(
+        selector-item: $selector-label,
+        hash: $label-size-hash,
+        each: @(size, name) {
+
+            > {$selector-label} {
+                label-size(size)
+            }
+
+            ui-variant(
+                hash: $label-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-label} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
+
+        }
+    )
+
+
+ui-labels-tight()
+
+    ui-collection-tight(
+        selector-item: $selector-label
+    )
+
+    ui-collection-tight-side-radius(
+        selector-item: $selector-label,
+        hash: $label-radius-hash
+    )

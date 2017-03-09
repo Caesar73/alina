@@ -1,0 +1,24 @@
+/**
+ * @file Tabs
+ * @author musicode
+ */
+
++prefix-classes($ui-prefix)
+
+    {$selector-tabs}
+        ui-tabs()
+
+        &{$selector-tight}
+            ui-collection-tight(
+                selector-item: $selector-tab,
+                gap-item: -1px
+            )
+
+        &{$selector-justified}
+            ui-justified(
+                selector-item: $selector-tab
+            )
+
+        > {$selector-tab}
+            ui-tab()
+

@@ -1,0 +1,212 @@
+---
+layout: default
+---
+
+<div class="content">
+
+<!--
+    <h1>plain div.menu.menu-horizontal</h1>
+    <div class="menu menu-horizontal">
+        <a href="#" class="menu-link menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-horizontal.menu-custom-1</h1>
+    <div class="menu menu-horizontal menu-custom-1">
+        <a href="#" class="menu-link menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-separator"></li>
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-custom-2</h1>
+    <div class="menu menu-custom-2">
+        <a href="#" class="menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-separator"></li>
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-separator"></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>plain div.menu, with nested children. Note that with no width set, it's funky, but using inline-block would not be desirable for most cases.</h1>
+    <div class="menu">
+        <a href="#" class="menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item menu-has-children">
+                <a href="#" class="menu-link">Blog</a>
+                <ul class="menu-children">
+                    <li class="menu-item"><a class="menu-link" href="/handlebars">Handlebars Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/dust">Dust Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/react">React Mixins</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/javascript">Intl Message Format</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-custom-2, with nested children. Here, a width is set. Sub-sub menu functionality demonstrated as well.</h1>
+    <div class="menu menu-custom-2">
+        <a href="#" class="menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item menu-has-children">
+                <a href="#" class="menu-link">Blog</a>
+                <ul class="menu-children">
+                    <li class="menu-item"><a class="menu-link" href="/handlebars">Handlebars Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/dust">Dust Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/react">React Mixins</a></li>
+                    <li class="menu-item menu-has-children">
+                        <a href="#" class="menu-link">More Stuff</a>
+                        <ul class="menu-children">
+                            <li class="menu-item"><a class="menu-link" href="/handlebars">Foo</a></li>
+                            <li class="menu-item"><a class="menu-link" href="/dust">Bar</a></li>
+                            <li class="menu-item"><a class="menu-link" href="/react">Baz</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-custom-2, with nested children. Here, a width is set to limit the menu width.
+        The .menu-allow-hover class is in play as well, no click required to display a submenu.</h1>
+    <div class="menu menu-custom-2">
+        <a href="#" class="menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item menu-has-children menu-allow-hover">
+                <a href="#" class="menu-link">Blog</a>
+                <ul class="menu-children">
+                    <li class="menu-item"><a class="menu-link" href="/handlebars">Handlebars Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/dust">Dust Helpers</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/react">React Mixins</a></li>
+                    <li class="menu-item menu-has-children menu-allow-hover">
+                        <a href="#" class="menu-link">More Stuff</a>
+                        <ul class="menu-children">
+                            <li class="menu-item"><a class="menu-link" href="/handlebars">Foo</a></li>
+                            <li class="menu-separator"></li>
+                            <li class="menu-item"><a class="menu-link" href="/dust">Bar</a></li>
+                            <li class="menu-item"><a class="menu-link" href="/react">Baz</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-horizontal with nested dropdown and separator</h1>
+    <div class="menu menu-horizontal">
+        <a href="#" class="menu-link menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Wang</a></li>
+            <li class="menu-item menu-has-children menu-allow-hover">
+                <a href="#" class="menu-link">Yahoo</a>
+                <ul class="menu-children">
+                    <li class="menu-item"><a class="menu-link" href="/handlebars">Foo</a></li>
+                    <li class="menu-separator"></li>
+                    <li class="menu-item"><a class="menu-link" href="/dust">Bar</a></li>
+                    <li class="menu-item"><a class="menu-link" href="/react">Baz</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <h1>div.menu.menu-horizontal.menu-scrollable</h1>
+    <div class="menu menu-horizontal menu-scrollable">
+        <a href="#" class="menu-link menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Google</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Apple</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Borland</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Wang</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Yahoo</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-scrollable.menu-custom-3</h1>
+    <div class="menu menu-scrollable menu-custom-3">
+        <a href="#" class="menu-link menu-heading">Title</a>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Google</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Apple</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Borland</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Wang</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Yahoo</a></li>
+        </ul>
+    </div>
+
+    <h1>div.menu.menu-horizontal, with nested children, customized</h1>
+    <div class="menu-custom menu menu-horizontal" hidden>
+        <a href="#" class="heading-custom menu-link menu-heading">Title</a>
+        <ul class="list-custom menu-list">
+            <li class="item-custom menu-item"><a href="#" class="link-custom menu-link">Home</a></li>
+            <li class="item-custom menu-item"><a href="#" class="link-custom menu-link">About</a></li>
+            <li class="item-custom menu-item menu-has-children">
+                <a href="#" class="link-custom menu-link">Blog</a>
+                <ul class="children-custom menu-children">
+                    <li class="item-custom menu-item"><a class="link-custom menu-link" href="/handlebars">Handlebars Helpers</a></li>
+                    <li class="item-custom menu-item"><a class="link-custom menu-link" href="/dust">Dust Helpers</a></li>
+                    <li class="item-custom menu-item"><a class="link-custom menu-link" href="/react">React Mixins</a></li>
+                    <li class="item-custom menu-item"><a class="link-custom menu-link" href="/javascript">Intl Message Format</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#" class="link-custom menu-link">Contact</a></li>
+            <li class="menu-item"><a href="#" class="link-custom menu-link">GitHub</a></li>
+            <li class="menu-item"><a href="#" class="link-custom menu-link">Twitter</a></li>
+        </ul>
+    </div>
+-->
+
+
+</div>

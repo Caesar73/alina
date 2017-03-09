@@ -1,0 +1,80 @@
+/**
+ * @file Message
+ * @author musicode
+ */
+
+message-size(size)
+
+    ui-set('font-size', size['font'])
+    ui-set('line-height', size['line-height'])
+    ui-set('padding', size['padding-vertical'] size['padding-horizontal'])
+
+
+message-brand(brand)
+
+    ui-set('background-color', brand['bg'])
+    ui-set('border-color', brand['border'])
+    ui-set('color', brand['color'])
+
+
+ui-message()
+
+    border 1px solid transparent
+    display inline-block
+    text-align left
+
+    ui-variant(
+        hash: $message-brand-hash,
+        each: message-brand
+    )
+
+    ui-variant(
+        hash: $message-size-hash,
+        each: @(size, name) {
+            message-size(size)
+
+            ui-variant(
+                hash: $message-radius-hash[name],
+                each: @(radius) {
+                    ui-set('border-radius', radius)
+                }
+            )
+        }
+    )
+
+
+ui-messages()
+
+    ui-collection(
+        selector-item: $selector-message,
+        hash: $message-size-hash,
+        each: @(size, name) {
+
+            > {$selector-message} {
+                message-size(size)
+            }
+
+            ui-variant(
+                hash: $message-radius-hash[name],
+                each: @(radius) {
+                    > {$selector-message} {
+                        ui-set('border-radius', radius)
+                    }
+                }
+            )
+
+        }
+    )
+
+
+ui-messages-tight()
+
+    ui-collection-tight(
+        selector-item: $selector-message,
+        gap-item: -1px
+    )
+
+    ui-collection-tight-side-radius(
+        selector-item: $selector-message,
+        hash: $message-radius-hash,
+    )

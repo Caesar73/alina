@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<title>Alina</title>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A beautiful framewok named Alina">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--[if lte IE 8]>
+  <link rel="stylesheet" href="/alina/css/ie8.css" />
+<![endif]-->
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="/alina/css/ie9.css" />
+<![endif]-->
+<link id="main-style" rel="stylesheet" href="/alina/build/sass/alina.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<script type="text/javascript">
+;(function(){
+    var calc = function () {
+        var docElement = document.documentElement;
+        var clientWidthValue = docElement.clientWidth > 480 ? 480 : docElement.clientWidth;
+        docElement.style.fontSize = 10*(clientWidthValue/320) + 'px';
+    }
+    calc();
+    window.addEventListener('resize',calc);
+})();
+</script>
+<script>
+//console.log(document.body.className);
+//alert(navigator.userAgent);
+;(function(ua, w, d, undefined) {
+    var _ua = ua.toLowerCase();
+    //alert(_ua);
+    if ( (/iphone|ipod|ipad/).test(_ua) ) {
+        d.body.className = 'apple mobile';
+        return;
+    }
+    else if ( (/android|blackberry|opera mini|iemobile/).test(_ua) ) {
+        d.body.className = 'android mobile';
+        if ( _ua.indexOf('micromessenger') > -1 ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+    else if ( (/mobile/).test(_ua) ) {
+        d.body.className = 'mobile';
+        if ( (_ua.indexOf('micromessenger') > -1) || (_ua.indexOf('baidu') > -1) ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+    else {
+        d.body.className = 'pc';
+        if ( _ua.indexOf('micromessenger') > -1 ) {
+            //alert('wechat');
+            d.body.className = 'wechat mobile';
+        }
+        return;
+    }
+
+})(navigator.userAgent || navigator.vendor || window.opera, window, document);
+//console.log(document.body.className);
+//alert(document.body.className);
+</script>
+
+<div id="container" class="layout wrapper">
+
+    
+<!-- Menu toggle -->
+<a href="#" id="switch" class="menu-switch">
+  <!-- Hamburger icon -->
+  <span></span>
+</a>
+<div class="menu">
+  <div class="menu side-menu">
+      <a class="menu-heading side-menu-heading" href="/alina/">Alina</a>
+
+      <ul class="menu-list">
+          <li class="menu-item"><a href="/alina/buttons.html" class="menu-link">Buttons</a></li>
+          <li class="menu-item"><a href="/alina/forms.html" class="menu-link">Forms</a></li>
+          <li class="menu-item"><a href="/alina/grids.html" class="menu-link">Grids</a></li>
+          <li class="menu-item"><a href="/alina/menus.html" class="menu-link">Menus</a></li>
+          <li class="menu-item"><a href="/alina/tables.html" class="menu-link">Tables</a></li>
+          <li class="menu-item"><a href="/alina/forms.html" class="menu-link">Forms</a></li>
+      </ul>
+  </div>
+</div>
+
+
+
+    <div class="main">
+        <div class="header">
+            <h1>Page Title</h1>
+            <h2>A subtitle for your page goes here</h2>
+        </div>
+
+        <div class="content">
+
+    <h1>Tables Tests</h1>
+
+    <h2>Default Table</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Checking alignment</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+            </tr>
+            <tr>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+            </tr>
+            <tr>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+                <td><s class="box" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Bordered Table</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Bordered Table with rowspan</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Bordered Table with colspan</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td colspan="3">[ redacted ]</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table with Horizontal Borders</h2>
+
+    <table class="table table-horizontal">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Striped Table</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-odd">
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr class="table-odd">
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ford</td>
+                <td>Focus</td>
+                <td>2008</td>
+            </tr>
+            <tr class="table-odd">
+                <td>5</td>
+                <td>Nissan</td>
+                <td>Sentra</td>
+                <td>2011</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>BMW</td>
+                <td>M3</td>
+                <td>2009</td>
+            </tr>
+            <tr class="table-odd">
+                <td>7</td>
+                <td>Honda</td>
+                <td>Civic</td>
+                <td>2010</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Kia</td>
+                <td>Soul</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Nth Child Selector Styling</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>2012</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>2010</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ford</td>
+                <td>Focus</td>
+                <td>2008</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Nissan</td>
+                <td>Sentra</td>
+                <td>2011</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>BMW</td>
+                <td>M3</td>
+                <td>2009</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Honda</td>
+                <td>Civic</td>
+                <td>2010</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Kia</td>
+                <td>Soul</td>
+                <td>2010</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Nested Table</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Honda</td>
+                <td>Accord</td>
+                <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fuel</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Diesel</td>
+                                <td>2009</td>
+                            </tr>
+                            <tr>
+                                <td>Petrol</td>
+                                <td>2009</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Toyota</td>
+                <td>Camry</td>
+                <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fuel</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Diesel</td>
+                                <td>2012</td>
+                            </tr>
+                            <tr>
+                                <td>Petrol</td>
+                                <td>2012</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hyundai</td>
+                <td>Elantra</td>
+                <td>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fuel</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Diesel</td>
+                                <td>2010</td>
+                            </tr>
+                            <tr>
+                                <td>Petrol</td>
+                                <td>2010</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="text-center">
+    <small class="copyright">Designed <i class="fa fa-heart"></i> by <a href="http://www.zhangjiayi.net" target="_blank" rel="nofollow">Caesar</a></small>
+  </div><!--//container-->
+</footer><!--//footer-->
+<!-- Javascript -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- custom js
+<script type="text/javascript" src="/alina/build/js/main.js"></script>
+-->
+<script>
+;(function (window, document, $) {
+  var container = $('#container');
+  var layout    = container;
+  var menu      = container.find('.menu');
+  var menuLink  = container.find('#switch');
+  var content   = container.find('.main');
+
+  container
+  .on('click', '#switch', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    toggleAll(e);
+  })
+  .on('click', '.main', function (e) {
+    // e.preventDefault();
+    /* Act on the event */
+    if ( menu.hasClass('active') ) {
+      toggleAll(e);
+    }
+  })
+  ;
+
+  function toggleClass (element, className) {
+    console.log(element);
+    var el = element;
+    var c  = className;
+    if ( el.hasClass(c)) {
+      el.removeClass(c);
+    }
+    else {
+      el.addClass(c);
+    }
+
+  }
+
+  function toggleAll (e) {
+    e.preventDefault();
+
+    var active = 'active';
+    toggleClass(layout,   active);
+    toggleClass(menu,     active);
+    toggleClass(menuLink, active);
+
+  }
+
+})(this, this.document, jQuery);
+
+</script>
+</body>
+</script>
+</html>
+

@@ -1,0 +1,104 @@
+/**
+ * @file Dialog
+ * @author musicode
+ */
+
+dialog-brand(brand)
+
+    > {$selector-dialog-header}
+        border-bottom 0
+        margin-left -1px
+        margin-right -1px
+        margin-top -1px
+
+        &
+            ui-set('background-color', brand['bg'])
+            ui-set('color', brand['color'])
+
+        + {$selector-dialog-close}
+            ui-set('color', brand['color'])
+
+
+ui-dialog()
+
+    color inherit
+    display none
+    position fixed
+    text-align left
+
+    ui-set('background-color', $dialog-bg)
+    ui-set('min-width', $dialog-min-width)
+    ui-set('box-shadow', $dialog-box-shadow)
+    ui-set('border-radius', $dialog-radius)
+
+    if $dialog-border is a 'rgba'
+        border 1px solid $dialog-border
+
+    ui-variant(
+        hash: $dialog-brand-hash,
+        each: dialog-brand
+    )
+
+
+ui-dialog-draggable()
+
+    > {$selector-dialog-header}
+        ui-set('cursor', $cursor-move)
+
+
+ui-dialog-header()
+
+    user-select none
+
+    ui-set('background-color', $dialog-header-bg)
+    ui-set('color', $dialog-header-color)
+    ui-set('padding', $dialog-header-padding-vertical $dialog-padding-horizontal)
+
+    if $dialog-radius > 0
+        ui-set('border-top-left-radius', $dialog-radius)
+        ui-set('border-top-right-radius', $dialog-radius)
+
+    if $dialog-header-divider is a 'rgba'
+        border-bottom 1px solid $dialog-header-divider
+
+
+ui-dialog-title()
+
+    display inline-block
+    ui-set('font-size', $dialog-title-font-size)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-text)
+
+
+ui-dialog-close()
+
+    position absolute
+    ui-set('top', $dialog-close-top)
+    ui-set('right', $dialog-padding-horizontal)
+    ui-set('font-size', $dialog-close-font-size)
+    ui-set('color', $dialog-close-color)
+
+    if $support-mouse
+        ui-set('cursor', $cursor-clickable)
+        &:hover
+            ui-transition('color')
+            ui-set('color', $dialog-close-color-hover)
+
+
+
+ui-dialog-body()
+
+    ui-set('padding', $dialog-body-padding-vertical $dialog-padding-horizontal)
+
+
+
+ui-dialog-footer()
+
+    ui-set('text-align', $dialog-footer-text-align);
+    ui-set('padding', $dialog-footer-padding-vertical $dialog-padding-horizontal)
+
+    if $dialog-footer-divider is a 'rgba'
+        border-top 1px solid $dialog-footer-divider
+
+

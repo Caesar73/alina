@@ -1,0 +1,240 @@
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+
+
+/*
+Add transition to containers so they can push in and out.
+*/
+
+.layout,
+.menu,
+.menu-switch {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+
+.layout {
+  position: relative;
+  left: 0;
+  padding-left: 0;
+}
+
+.layout.active .menu {
+  left: $side-menu-width;
+  width: $side-menu-width;
+}
+
+.layout.active .menu-switch {
+  left: $side-menu-width;
+}
+
+/*
+The `.menu` `<div>` is the parent `<div>` that contains the `.side-menu` that
+appears on the left side of the page.
+*/
+
+.menu {
+  margin-left: -$side-menu-width; /* ".menu" width */
+  width: $side-menu-width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000; /* so the menu or its navicon stays above all content */
+  background: #191818;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.header {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  padding: 2.5rem 2rem 0;
+  border-bottom: 1px solid #eee;
+
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  letter-spacing: 0.05rem;
+
+}
+.header h1 {
+  margin: 0.2rem 0;
+  font-size: 200%;
+  font-weight: 300;
+}
+ .header h2 {
+  font-weight: 300;
+  font-size: 160%;
+  color: #ccc;
+  padding: 0;
+  margin-top: 0;
+}
+
+.content-subhead {
+  margin: 5rem 0 2rem 0;
+  font-weight: 300;
+  color: #888;
+}
+
+
+
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-switch` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+
+.menu-switch {
+  position: fixed;
+  display: block;
+  /* show this only on small screens */
+  top: 0;
+  left: 0;
+  /* ".menu width" */
+  background: #000;
+  background: rgba(0,0,0,0.7);
+  font-size: 1rem;
+  /* change this value to increase/decrease button size */
+  z-index: 10;
+  width: 2rem;
+  height: auto;
+  padding: 2.1rem 1.6rem;
+
+  // -webkit-overflow-scrolling: touch;
+
+}
+
+.menu-switch:hover,
+.menu-switch:focus {
+  background: #000;
+}
+
+.menu-switch span {
+  position: relative;
+  display: block;
+}
+
+.menu-switch span,
+.menu-switch span:before,
+.menu-switch span:after {
+  background-color: #fff;
+  width: 100%;
+  height: 0.2rem;
+  -webkit-transition: all 0.4s;
+     -moz-transition: all 0.4s;
+      -ms-transition: all 0.4s;
+       -o-transition: all 0.4s;
+          transition: all 0.4s;
+}
+
+.menu-switch span:before,
+.menu-switch span:after {
+  position: absolute;
+  margin-top: -0.6rem;
+  content: " ";
+}
+
+.menu-switch span:after {
+  margin-top: 0.6rem;
+}
+
+.menu-switch.active span {
+  background: transparent;
+}
+
+.menu-switch.active span:before {
+  -webkit-transform: rotate(45deg) translate(.5rem, .4rem);
+     -moz-transform: rotate(45deg) translate(.5rem, .4rem);
+      -ms-transform: rotate(45deg) translate(.5rem, .4rem);
+       -o-transform: rotate(45deg) translate(.5rem, .4rem);
+          transform: rotate(45deg) translate(.5rem, .4rem);
+}
+
+.menu-switch.active span:after {
+  -webkit-transform: rotate(-45deg) translate(.4rem, -.3rem);
+     -moz-transform: rotate(-45deg) translate(.4rem, -.3rem);
+      -ms-transform: rotate(-45deg) translate(.4rem, -.3rem);
+       -o-transform: rotate(-45deg) translate(.4rem, -.3rem);
+          transform: rotate(-45deg) translate(.4rem, -.3rem);
+}
+
+/*
+All anchors inside the menu should be styled like this.
+*/
+.menu a {
+  color: #999;
+  border: none;
+  padding: 0.6rem 0 0.6rem 0.6rem;
+}
+
+/*
+Remove all background/borders, since we are applying them to .menu.
+*/
+ .menu .side-menu,
+ .menu .side-menu ul {
+  border: none;
+  background: transparent;
+}
+
+/*
+Add that light border to separate items into groups.
+*/
+.menu .side-menu ul,
+.menu .side-menu .menu-item-divided {
+  border-top: 1px solid #333;
+}
+/*
+Change color of the anchor links on hover/focus.
+*/
+.menu .side-menu li a:hover,
+.menu .side-menu li a:focus {
+  background: #333;
+}
+
+/*
+This styles the selected menu item `<li>`.
+*/
+.menu .side-menu-selected,
+.menu .side-menu-heading {
+    background: #1f8dd6;
+}
+/*
+This styles a link within a selected menu item `<li>`.
+*/
+.menu .side-menu-selected a {
+  color: #fff;
+}
+
+/*
+This styles the menu heading.
+*/
+.menu .side-menu-heading {
+  font-size: 110%;
+  color: #fff;
+  margin: 0;
+}
