@@ -426,6 +426,9 @@ ol ol, ol ul {
 li {
   margin-bottom: 1rem; }
 
+video[autoplay]:not([muted]) {
+  display: none; }
+
 /*
  * @author: Caesar
  * @module:

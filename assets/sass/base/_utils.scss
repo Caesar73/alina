@@ -59,3 +59,9 @@ li {
   margin-bottom: 1rem;
 }
 
+// Functional
+//---------------------------------------------------
+// 隐藏没有静音、自动播放的影片
+video[autoplay]:not([muted]) {
+  display: none;
+}
