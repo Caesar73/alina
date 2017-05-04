@@ -1,6 +1,6 @@
 /*csslint adjoining-classes: false, box-model:false*/
 .menu {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .menu-fixed {
@@ -16,9 +16,22 @@
 }
 
 .menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .divider {
+      height: 1px;
+      margin: 9px 0;
+      overflow: hidden;
+      background-color: #e5e5e5;
+  }
+
+  .divider-white {
+    @extend .divider;
+    background-color: #FFF;
+  }
+
 }
 
 .menu-item {

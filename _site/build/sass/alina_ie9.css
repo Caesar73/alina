@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+/*
+ * @author: Caesar
+ * @module:
+ * @depend:
+ *
+ */
+/*
+
+Desktop HD: 1200px
+Desktop: 1000px
+Tablet: 750px
+Phablet: 550px
+Mobile: 400px
+
+ */
+/*
+
+<style media="value">
+screen  计算机屏幕（默认值）。
+tty 电传打字机以及使用等宽字符网格的类似媒介。
+tv  电视类型设备（低分辨率、有限的屏幕翻滚能力）。
+projection  放映机。
+handheld  手持设备（小屏幕、有限的带宽）。
+print 打印预览模式 / 打印页。
+braille 盲人用点字法反馈设备。
+aural 语音合成器。
+all 适合所有设备。
+
+media type的浏览器支持
+IE5.5/6/7不支持在@import中使用媒体类型
+Safari/firefox只支持all,screen,print三种类型(包括iphone)
+Opera 完全支持
+Opera mini  支持handheld，未指定则使用screen
+Windows Mobile系统中的IE支持handheld，其它支持不明…
+
+media query的浏览器支持：
+IE 9以下不支持
+Firefox 3.5+(Gecko 1.9.1+)支持
+Opera 9.5+完全支持
+Opera mini 5支持
+webkit 支持大部分属性(safari 3.0的内核版本是522，iPhone 1代的safari的内核版本是524，webkit大概从这个时候开始支持media query，但是对部分属性比如projection支持不好)
+iPhone OS 3.2之前的版本不支持orientation属性，iPad和iPhone 4支持该属性。
+iPhone Safari不支持orientation(iPhone 4支持)
+
+检测iPhone safari：
+<link media="only screen and (max-device-width: 480px)" href="style.css">
+
+not：排除某种制定的媒体类型
+@media not print and (color){ }
+only：指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器：
+@media only screen and (color){ }
+
+ */

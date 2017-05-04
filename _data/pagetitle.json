@@ -1,0 +1,32 @@
+{
+
+  "index": {
+    "title": "Index",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "buttons": {
+    "title": "Buttons",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "forms": {
+    "title": "Forms",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "grids": {
+    "title": "Grids",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "menus": {
+    "title": "Menus",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "table": {
+    "title": "Table",
+    "subtitle": "A subtitle for your page goes here"
+  },
+  "sign": {
+    "title": "Sign Module",
+    "subtitle": "A subtitle for your page goes here"
+  }
+
+}

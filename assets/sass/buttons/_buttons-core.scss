@@ -8,6 +8,8 @@
 // Buttons
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+
+
 .button,
 button {
   // background-color: #E6E6E6;
@@ -25,12 +27,12 @@ button {
   // color: rgba(0, 0, 0, 0.80); /* rgba supported */
   font-family: inherit;
   // font-size: 100%;
-  font-size: 1rem;
+  font-size: $button-width/3;
+  height: $button-width;
+  line-height: $button-width;
   font-weight: 600;
-  height: 3rem;
   padding: 0 2.5rem;
   // padding: 0.5em 1em;
-  line-height: 3rem;
   // line-height: normal;
   letter-spacing: .1rem;
 
@@ -43,6 +45,38 @@ button {
   user-select: none;
   zoom: 1;
 
+}
+
+.button-x {
+  @extend .button;
+  font-size: $button-width-x/3;
+  height: $button-width-x;
+  line-height: $button-width-x;
+  // font-weight: 600;
+}
+
+.button-l {
+  @extend .button;
+  font-size: $button-width-l/3;
+  height: $button-width-l;
+  line-height: $button-width-l;
+  // font-weight: 600;
+}
+
+.button-m {
+  @extend .button;
+  font-size: $button-width-m/3;
+  height: $button-width-m;
+  line-height: $button-width-m;
+  // font-weight: 600;
+}
+
+.button-s {
+  @extend .button;
+  font-size: $button-width-s/3;
+  height: $button-width-s;
+  line-height: $button-width-s;
+  // font-weight: 600;
 }
 
 /* Firefox: Get rid of the inner focus border */

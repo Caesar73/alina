@@ -2,12 +2,16 @@
 layout: default
 ---
 
+<div class="header">
+    <h1>{{ site.data.pagetitle.grids.title }}</h1>
+    <h2>{{ site.data.pagetitle.grids.subtitle }}</h2>
+</div>
+
 <div class="content">
 
     <h1>Grids Tests</h1>
 
     <h2>Base Grid</h2>
-
     <div class="grid">
         <div class="ui-1-2">
             <div class="con">1/2</div>
@@ -16,7 +20,6 @@ layout: default
             <div class="con">1/2</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-4">
             <div class="con">1/4</div>
@@ -31,7 +34,6 @@ layout: default
             <div class="con">1/4</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-3-4">
             <div class="con">3/4</div>
@@ -40,7 +42,6 @@ layout: default
             <div class="con">1/4</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-3">
             <div class="con">1/3</div>
@@ -52,7 +53,6 @@ layout: default
             <div class="con">1/3</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-3">
             <div class="con">1/3</div>
@@ -61,7 +61,6 @@ layout: default
             <div class="con">2/3</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-5">
             <div class="con">1/5</div>
@@ -73,7 +72,6 @@ layout: default
             <div class="con">2/5</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-3-5">
             <div class="con">3/5</div>
@@ -82,7 +80,6 @@ layout: default
             <div class="con">2/5</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-6">
             <div class="con">1/6</div>
@@ -103,7 +100,6 @@ layout: default
             <div class="con">1/6</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-6">
             <div class="con">1/6</div>
@@ -112,7 +108,6 @@ layout: default
             <div class="con">5/6</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-8">
             <div class="con">1/8</div>
@@ -127,7 +122,6 @@ layout: default
             <div class="con">1/8</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-3-8">
             <div class="con">3/8</div>
@@ -136,7 +130,6 @@ layout: default
             <div class="con">5/8</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-7-8">
             <div class="con">7/8</div>
@@ -145,7 +138,6 @@ layout: default
             <div class="con">1/8</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-4">
             <div class="con">1/4</div>
@@ -157,7 +149,6 @@ layout: default
             <div class="con">1/4</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-8">
             <div class="con">1/8</div>
@@ -172,7 +163,6 @@ layout: default
             <div class="con">1/4</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-12">
             <div class="con">1/12</div>
@@ -187,7 +177,6 @@ layout: default
             <div class="con">5/12</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-7-12">
             <div class="con">7/12</div>
@@ -196,7 +185,6 @@ layout: default
             <div class="con">5/12</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-12">
             <div class="con">1/12</div>
@@ -205,7 +193,6 @@ layout: default
             <div class="con">11/12</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-24">
             <div class="con">1/24</div>
@@ -220,7 +207,6 @@ layout: default
             <div class="con">11/24</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-17-24">
             <div class="con">17/24</div>
@@ -229,7 +215,6 @@ layout: default
             <div class="con">7/24</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-19-24">
             <div class="con">19/24</div>
@@ -238,7 +223,6 @@ layout: default
             <div class="con">5/24</div>
         </div>
     </div>
-
     <div class="grid">
         <div class="ui-1-24">
             <div class="con">1/24</div>
@@ -250,7 +234,6 @@ layout: default
 
 
     <h2>Custom Font and Grids</h2>
-
     <div class="serif">
         <p>
             Grids with a serif font stack.
@@ -290,7 +273,6 @@ layout: default
             </div>
         </div>
     </div>
-
     <div class="monospace">
         <p>
             Grids with a monospace font stack.
@@ -333,7 +315,6 @@ layout: default
 
 
     <h2>Wrapping Grids</h2>
-
     <div class="grid">
         <div class="ui-1-2">
             <div class="con">Wrapping 1/2</div>
@@ -346,72 +327,72 @@ layout: default
         </div>
     </div>
 
-    <h2>Responsive Grids</h2>
-    <div class="grid">
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <div class="con">1 -> 1/2 -> 1/4</div>
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <div class="con">1 -> 1/2 -> 1/4</div>
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <div class="con">1 -> 1/2 -> 1/4</div>
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <div class="con">1 -> 1/2 -> 1/4</div>
-        </div>
-    </div>
+  <h2>Responsive Grids</h2>
+  <div class="grid">
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <div class="con">1 -> 1/2 -> 1/4</div>
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <div class="con">1 -> 1/2 -> 1/4</div>
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <div class="con">1 -> 1/2 -> 1/4</div>
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <div class="con">1 -> 1/2 -> 1/4</div>
+      </div>
+  </div>
 
-    <h2>Nested Responsive Grids</h2>
-    <div class="grid">
-        <div class="ui-1 ui-md-1-2">
-            <div class="con">
-                <div class="grid">
-                    <div class="ui-1 ui-lg-1-2">
-                        <div class="con">1 -> 1/2</div>
-                    </div>
-                    <div class="ui-1 ui-lg-1-2">
-                        <div class="con">1 -> 1/2</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <h2>Nested Responsive Grids</h2>
+  <div class="grid">
+      <div class="ui-1 ui-md-1-2">
+          <div class="con">
+              <div class="grid">
+                  <div class="ui-1 ui-lg-1-2">
+                      <div class="con">1 -> 1/2</div>
+                  </div>
+                  <div class="ui-1 ui-lg-1-2">
+                      <div class="con">1 -> 1/2</div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-        <div class="ui-1 ui-md-1-2">
-            <div class="con">
-                <div class="grid">
-                    <div class="ui-1-4 ui-lg-1-8">
-                        <div class="con">1/4 -> 1/8</div>
-                    </div>
-                    <div class="ui-1-4 ui-lg-1-8">
-                        <div class="con">1/4 -> 1/8</div>
-                    </div>
-                    <div class="ui-1-4 ui-lg-3-8">
-                        <div class="con">1/4 -> 3/8</div>
-                    </div>
-                    <div class="ui-1-4 ui-lg-3-8">
-                        <div class="con">1/4 -> 3/8</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="ui-1 ui-md-1-2">
+          <div class="con">
+              <div class="grid">
+                  <div class="ui-1-4 ui-lg-1-8">
+                      <div class="con">1/4 -> 1/8</div>
+                  </div>
+                  <div class="ui-1-4 ui-lg-1-8">
+                      <div class="con">1/4 -> 1/8</div>
+                  </div>
+                  <div class="ui-1-4 ui-lg-3-8">
+                      <div class="con">1/4 -> 3/8</div>
+                  </div>
+                  <div class="ui-1-4 ui-lg-3-8">
+                      <div class="con">1/4 -> 3/8</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-    <h2><code>.img</code> Images</h2>
-    <div class="grid">
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <img class="img" src="http://placehold.it/350x200">
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <img class="img" src="http://placehold.it/350x200">
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <img class="img" src="http://placehold.it/350x200">
-        </div>
-        <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
-            <img class="img" src="http://placehold.it/350x200">
-        </div>
-    </div>
+  <h2><code>.img</code> Images</h2>
+  <div class="grid">
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <img class="img" src="http://placehold.it/350x200">
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <img class="img" src="http://placehold.it/350x200">
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <img class="img" src="http://placehold.it/350x200">
+      </div>
+      <div class="ui-1 ui-sm-1-2 ui-lg-1-4">
+          <img class="img" src="http://placehold.it/350x200">
+      </div>
+  </div>
 
   <h2>Grid Inside Table</h2>
   <table>

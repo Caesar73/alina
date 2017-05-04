@@ -115,8 +115,12 @@ only：指定某种特定的媒体类型，可以用来排除不支持媒体查�
 // Sidebar
 $side-menu-width: 150px;
 
-
-
+// Buttons
+$button-width: 3rem;
+$button-width-x: $button-width*2;
+$button-width-l: $button-width*1.5;
+$button-width-m: $button-width*0.75;
+$button-width-s: $button-width*0.5;
 
 
 
