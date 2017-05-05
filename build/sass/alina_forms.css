@@ -162,7 +162,7 @@ input[type="checkbox"], input[type="radio"] {
 
 label,
 legend {
-  display: block;
+  display: inline-block;
   margin-bottom: .5rem;
   font-weight: 600; }
 
@@ -181,6 +181,14 @@ also have border and padding. This is done because some browsers don't render
 the padding. We explicitly set the box-model for select elements to border-box,
 so we can ignore the csslint warning.
 */
+.form {
+  text-align: left; }
+  .form fieldset {
+    font-size: 1rem;
+    text-align: left; }
+  .form label {
+    text-align: left; }
+
 .form input[type="text"],
 .form input[type="password"],
 .form input[type="email"],
@@ -393,7 +401,9 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 /* Rounded Inputs */
 .form input.input-rounded,
 .form .input-rounded {
-  border-radius: 2rem;
+  border-radius: 2rem; }
+
+.form textarea.input-rounded {
   padding: 0.5rem 1rem; }
 
 /* Grouped Inputs */

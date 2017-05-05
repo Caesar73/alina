@@ -9,19 +9,206 @@ layout: default
 
 <div class="content">
 
-<!--
-    <h1>plain div.menu.menu-horizontal</h1>
-    <div class="menu menu-horizontal">
-        <a href="#" class="menu-link menu-heading">Title</a>
-        <ul class="menu-list">
-            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">About</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Blog</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">GitHub</a></li>
-            <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+  <h2 id="vertical-menu" class="content-subhead">
+    Vertical Menu
+    <a href="#vertical-menu" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>
+    Menus are vertical by default. Minimal default styling and low-specificity
+    selectors make them easy to customize. By default, menu items take up
+    100% of the width of their container, so you may want to limit the menu
+    width or set the menu to display:inline-block.
+  </p>
+  <div class="menu custom-restricted-width">
+    <span class="menu-heading">Yahoo Sites</span>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+      <li class="menu-heading">More Sites</li>
+      <li class="menu-item"><a href="#" class="menu-link">Games</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">OMG!</a></li>
+    </ul>
+  </div>
+
+
+  <h2 id="horizontal-menu" class="content-subhead">
+    Horizontal Menu
+    <a href="#horizontal-menu" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>To create a horizontal menu, add the <code>menu-horizontal</code> class name.</p>
+  <div class="menu menu-horizontal">
+    <a href="#" class="menu-heading menu-link">BRAND</a>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+    </ul>
+  </div>
+
+
+  <h2 id="selected-and-disabled-items" class="content-subhead">
+    Selected and Disabled Items
+    <a href="#selected-and-disabled-items" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>Mark a selected list element by adding the <code>menu-selected</code> class to the list element. To mark a link as disabled, add an <code>&lt;a&gt;</code> element with the <code>menu-disabled</code> class name. Disabled items appear faded and do not inherit hover styles.</p>
+  <div class="menu menu-horizontal">
+    <ul class="menu-list">
+      <li class="menu-item menu-selected"><a href="#" class="menu-link">Selected</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Normal</a></li>
+      <li class="menu-item menu-disabled">Disabled</li>
+    </ul>
+  </div>
+
+
+  <h2 id="dropdowns" class="content-subhead">
+    Dropdowns
+    <a href="#dropdowns" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>We recommend enabling submenus via JavaScript to enable accessibility.
+  To help get you started, <a href="/js/menus.js">an example script</a>
+  written in vanilla JS provides ARIA support, limited submenu arrow-key
+  navigation, and the ability to dismiss menus with an outside event or
+  the ESC key. But you may wish to go further by adding edge detection,
+  comprehensive arrow-key navigation, and polyfills for compatibility
+  with old browsers.</p>
+  <p>Even with JavaScript in place, you still might want to display submenus
+  on hover. Just add <code>menu-allow-hover</code> to the
+  <code>menu-has-children</code> list item. This can be nice for desktop
+  users and provides a fallback for users with no JavaScript.</p>
+  <div class="menu menu-horizontal">
+    <ul class="menu-list">
+      <li class="menu-item menu-selected"><a href="#" class="menu-link">Home</a></li>
+      <li class="menu-item menu-has-children menu-allow-hover">
+        <a href="#" id="menuLink1" class="menu-link" aria-haspopup="true">Contact</a>
+        <ul class="menu-children" role="menu" aria-labelledby="menuLink1" aria-hidden="true">
+          <li class="menu-item" role="presentation">
+            <a href="#" class="menu-link" role="menuitem">Email</a>
+          </li>
+          <li class="menu-item" role="presentation">
+            <a href="#" class="menu-link" role="menuitem">Twitter</a>
+          </li>
+          <li class="menu-item" role="presentation">
+            <a href="#" class="menu-link" role="menuitem">Tumblr Blog</a>
+          </li>
         </ul>
-    </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <h2 id="vertical-menu-with-submenus" class="content-subhead">
+    Vertical Menu with Submenus
+    <a href="#vertical-menu-with-submenus" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>The same construct used to create dropdowns works in vertical menus as well. You
+  may nest submenus, but keep in mind that complex menus can present usability
+  challenges on small screens.</p>
+  <div class="menu custom-restricted-width">
+  <ul class="menu-list">
+    <li class="menu-item menu-selected"><a href="#" class="menu-link">Flickr</a></li>
+    <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+    <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+    <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+    <li class="menu-item menu-has-children">
+      <a href="#" id="menuLink1" class="menu-link" aria-haspopup="true">More</a>
+      <ul class="menu-children" role="menu" aria-labelledby="menuLink1" aria-hidden="true">
+          <li class="menu-item" role="presentation">
+            <a href="#" class="menu-link" role="menuitem">Autos</a>
+          </li>
+          <li class="menu-item" role="presentation">
+            <a href="#" class="menu-link" role="menuitem">Flickr</a>
+          </li>
+          <li class="menu-item menu-has-children" role="presentation">
+              <a href="#" id="menuLink1" class="menu-link" role="menuitem" aria-haspopup="true">Even More</a>
+              <ul class="menu-children" role="menu" aria-labelledby="menuLink1" aria-hidden="true">
+                  <li class="menu-item" role="presentation">
+                    <a href="#" class="menu-link" role="menuitem">Foo</a>
+                  </li>
+                  <li class="menu-item" role="presentation">
+                    <a href="#" class="menu-link" role="menuitem">Bar</a>
+                  </li>
+                  <li class="menu-item" role="presentation">
+                    <a href="#" class="menu-link" role="menuitem">Baz</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+
+  <h2 id="scrollable-horizontal-menu" class="content-subhead">
+    Scrollable Horizontal Menu
+    <a href="#scrollable-horizontal-menu" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>To create a scrollable horizontal menu, add the <code>menu-scrollable</code> class name. When
+  there isn't enough room, the menu items can be scrolled or flicked. Dropdown menus are not supported.</p>
+  <div class="menu menu-horizontal menu-scrollable">
+    <a href="#" class="menu-link menu-heading">Yahoo</a>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Autos</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Beauty</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Movies</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Small Business</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Cricket</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Tech</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">World</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
+    </ul>
+  </div>
+
+
+  <h2 id="scrollable-vertical-menu" class="content-subhead">
+    Scrollable Vertical Menu
+    <a href="#scrollable-vertical-menu" class="content-link" title="Heading anchor"></a>
+  </h2>
+  <p>To create a scrollable vertical menu, limit the height of your menu, and then add the <code>menu-scrollable</code> class name. The menu items can be scrolled or flicked. Submenus are not supported.</p>
+  <style>
+  /* Customization to limit height of the menu */
+  .custom-restricted {
+    height: 160px;
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+  }
+  </style>
+  <div class="menu menu-scrollable custom-restricted">
+    <a href="#" class="menu-link menu-heading">Yahoo</a>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Autos</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Beauty</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Movies</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Small Business</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Cricket</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Tech</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">World</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
+    </ul>
+  </div>
+
+<!--
+
+
+
+
+
+
 
     <h1>div.menu.menu-horizontal.menu-custom-1</h1>
     <div class="menu menu-horizontal menu-custom-1">
@@ -211,6 +398,322 @@ layout: default
             <li class="menu-item"><a href="#" class="link-custom menu-link">Twitter</a></li>
         </ul>
     </div>
+
+
+
+
+
+
+
+
+
+
+  <pre class="code" data-language="html" data-trimmed="true">
+    <code class="rainbow">
+      <span class="source css embedded">
+        <span class="support tag style">&lt;</span>
+        <span class="entity tag style">style</span>
+        <span class="support tag style">&gt;</span>
+        <span class="entity name class">.custom-restricted-width</span>{
+        <span class="comment">/* To limit the menu width to the content of the menu: */</span>
+        <span class="support css-property">display</span>:
+        <span class="support css-value">inline-block</span>;
+        <span class="comment">/* Or set the width explicitly: */</span>
+        <span class="comment">/* width: 10em; */</span>}
+        <span class="support tag style">&lt;/</span>
+        <span class="entity tag style">style</span>
+        <span class="support tag style">&gt;</span></span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">div</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu custom-restricted-width</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">span</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-heading</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Yahoo Sites
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">span</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">ul</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-list</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Flickr
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Messenger
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Sports
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Finance
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-heading</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>More Sites
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>Games
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>News
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-item</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support attribute">href</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">#</span>
+      <span class="string quote">"</span>
+      <span class="support attribute">class</span>
+      <span class="support operator">=</span>
+      <span class="string quote">"</span>
+      <span class="string value">menu-link</span>
+      <span class="string quote">"</span>
+      <span class="support tag close">&gt;</span>OMG!
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">a</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">li</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">ul</span></span>
+      <span class="support tag close">&gt;</span>
+      <span class="support tag">
+        <span class="support tag">&lt;</span>
+        <span class="support tag special">/</span>
+        <span class="support tag-name">div</span></span>
+      <span class="support tag close">&gt;</span></code>
+  </pre>
+
+
+
 -->
 
 

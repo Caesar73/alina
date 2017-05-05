@@ -6,27 +6,27 @@
   },
   "buttons": {
     "title": "Buttons",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for HTML buttons."
   },
   "forms": {
     "title": "Forms",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for HTML forms."
   },
   "grids": {
     "title": "Grids",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for HTML grids."
   },
   "menus": {
     "title": "Menus",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for menus."
   },
-  "table": {
+  "tables": {
     "title": "Table",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for HTML tables."
   },
   "sign": {
     "title": "Sign Module",
-    "subtitle": "A subtitle for your page goes here"
+    "subtitle": "Simple CSS for HTML sign."
   }
 
 }

@@ -8,7 +8,7 @@
 
 @import "alina_base";
 @import "alina_module";
-
+@import "alina_pages";
 
 
 .custom-fonts {
@@ -59,12 +59,13 @@ footer {
 }
 
 h1 {
-  margin-top: 2em;
-  font-size: 15px;
-  font-weight: normal;
+  // margin-top: 2em;
+  // font-size: 15px;
+  // font-weight: normal;
 }
+
 body {
-  padding: 2em 2em 8em;
+  // padding: 2em 2em 8em;
 }
 
 /* Update background on menu. */
