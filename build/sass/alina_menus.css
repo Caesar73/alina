@@ -130,8 +130,7 @@ only：指定某种特定的媒体类型，可以用来排除不支持媒体查�
 
 /* HORIZONTAL MENU */
 .menu-horizontal {
-  width: 100%;
-  white-space: nowrap; }
+  width: 100%; }
 
 .menu-horizontal .menu-list {
   display: inline-block; }

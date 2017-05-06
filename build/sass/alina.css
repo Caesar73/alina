@@ -2414,8 +2414,7 @@ this the same font stack that Normalize.css sets for the `body`.
 
 /* HORIZONTAL MENU */
 .menu-horizontal {
-  width: 100%;
-  white-space: nowrap; }
+  width: 100%; }
 
 .menu-horizontal .menu-list {
   display: inline-block; }
@@ -2835,6 +2834,407 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 /*
  * @author: Caesar
  * @module: Sign
+ * @depend:
+ *
+ */
+li {
+  list-style-type: none; }
+
+.forget-ul {
+  display: none; }
+
+.show-forget {
+  display: none; }
+
+.board-footer a {
+  color: #000; }
+
+#content {
+  padding: 0;
+  min-height: 100%;
+  max-width: 1028px;
+  margin: 0 auto; }
+
+#content .title {
+  background: whitesmoke;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  padding: 2.5rem 0;
+  line-height: 3rem;
+  height: 4rem; }
+
+#content .title img {
+  height: 36px;
+  position: relative;
+  top: 12px;
+  right: 5px; }
+
+.bg-img {
+  background: whitesmoke;
+  width: 100%;
+  max-width: 1028px; }
+
+/*
+#header { border-bottom: 1px solid #C2C2C2; padding: 1em 1.5em 1em 1.5em; }
+*/
+#header {
+  margin: 0 auto;
+  height: 4.5rem;
+  max-width: 1028px;
+  padding: 0; }
+  #header .menu {
+    float: right;
+    width: 12rem;
+    margin-right: 1rem;
+    height: 4.5rem; }
+  #header .login {
+    margin-right: 2rem; }
+  #header .logo-img {
+    height: 3rem;
+    margin-left: 3rem; }
+
+#header .login,
+#header .register {
+  color: #444;
+  cursor: pointer;
+  float: right;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  line-height: 2rem;
+  margin-top: 1rem; }
+
+.download-board {
+  margin: 2em 0;
+  overflow: hidden;
+  width: 100%; }
+
+.download-board a {
+  float: right;
+  margin-left: 2em; }
+
+#dialog {
+  background: white;
+  display: none;
+  text-align: center;
+  position: fixed;
+  *position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1009;
+  margin-top: 0;
+  margin-left: -16rem;
+  padding: 0 0 5rem 0;
+  width: 32rem;
+  height: 42rem; }
+  #dialog .board {
+    margin: 2rem 2rem 0 2rem; }
+  #dialog .board-title {
+    overflow: hidden; }
+    #dialog .board-title ul div {
+      color: #434343;
+      cursor: pointer;
+      float: left;
+      font-size: 1rem;
+      line-height: 2rem;
+      width: 8rem; }
+    #dialog .board-title li {
+      margin-bottom: 0; }
+  #dialog .img-wrapper {
+    width: 100%;
+    height: 10rem;
+    margin: 7.25rem 0 6.375rem 0; }
+  #dialog .logo-img {
+    width: 8.75rem; }
+
+#dialog .board-title ul {
+  margin-left: 5%;
+  overflow: hidden;
+  width: 90%;
+  border-bottom: 1px solid #dcdcdc; }
+
+#dialog .board-title ul.forget-ul {
+  border: 0; }
+
+#dialog .board-title ul li.active div {
+  border-bottom: 1px solid #000; }
+
+#dialog .board-title ul.forget-ul li.active div {
+  border: 0;
+  width: 100%; }
+
+#dialog .login-board .board-title ul li {
+  width: 50%;
+  overflow: hidden;
+  float: left; }
+
+#dialog .login-board .board-title ul li.forget {
+  margin-left: 25%;
+  border-bottom: 1px solid #000; }
+
+#dialog .login-board .board-title ul li.register div {
+  float: right; }
+
+#dialog .board-body input {
+  border: 0;
+  border-bottom: 1px solid #DCDCDC;
+  font-size: 14px;
+  line-height: 2em;
+  padding-left: 1em;
+  margin: 1px;
+  width: 87%;
+  height: 3.875em; }
+
+#dialog .board-body input.error {
+  border: 1px solid #CE1414; }
+
+#dialog .board-body input.verncode {
+  display: none;
+  float: left;
+  width: 50%;
+  margin: 1px 6.5%; }
+
+#dialog .board-body button[type=submit] {
+  border-radius: 2px;
+  border: 0;
+  background: #313131;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 2em 0 0 0;
+  width: 90%;
+  height: 42px; }
+
+#dialog .board-footer .show-forget {
+  display: block;
+  height: 3.1em; }
+
+#dialog .board-footer a {
+  line-height: 3em; }
+
+#shadow {
+  position: fixed;
+  *position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%; }
+
+#shadow {
+  background: rgba(236, 236, 236, 0.96);
+  display: none; }
+
+#shadow .close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px; }
+
+.getcode {
+  border: 0;
+  background: #313131;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 1rem;
+  display: none;
+  margin: 1.5em 0 0 0;
+  width: 9em;
+  padding: 0;
+  height: 2.5em;
+  line-height: 2.5rem; }
+
+.getcode:hover {
+  background: rgba(49, 49, 49, 0.69);
+  color: #FFF; }
+
+.language-select {
+  border: 1px solid #444;
+  float: left;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1.2em;
+  height: 2em;
+  padding: 1px 0 0 1rem; }
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  #header {
+    width: 100%; }
+  #header .login {
+    margin-right: 1rem; }
+  #header .menu {
+    width: 10em;
+    margin-right: 1.5rem; }
+  .download-board {
+    margin: 0;
+    margin-top: 0.5rem; }
+  .download-board a {
+    width: 40%;
+    margin: 0;
+    margin-right: 0.2rem;
+    float: right; }
+  .download-board a img {
+    width: 120px; }
+  #dialog {
+    width: 24rem;
+    height: 25rem;
+    margin-left: -12rem; }
+  #dialog .logo-img {
+    width: 4.75rem; }
+  #dialog .img-wrapper {
+    height: 4rem;
+    margin: 2.25rem 0 1.375rem 0; }
+  #dialog .board-body input {
+    height: 2.875rem;
+    padding-left: 0; }
+  #dialog .login-board .board-title ul li.forget {
+    margin-left: 20%;
+    width: 60%; }
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; }
+  .getcode {
+    margin: 0.5rem 0 0 0;
+    width: 6rem; } }
+
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 321px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) {
+  .download-board {
+    margin-top: 1rem; }
+  #dialog {
+    height: 26rem; }
+  #dialog .logo-img {
+    width: 6.75rem; }
+  #dialog .img-wrapper {
+    height: 6rem;
+    margin: 3.25rem 0 2.375rem 0; }
+  #dialog .login-board .board-title ul li.forget {
+    margin-left: 20%;
+    width: 60%; }
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 1) {
+  .download-board {
+    margin-top: 2rem; }
+  .download-board a {
+    width: 35%;
+    margin: 0;
+    margin-right: 1rem; }
+  .download-board a img {
+    float: right;
+    width: 130px; }
+  #dialog {
+    height: 30rem; }
+  #dialog .img-wrapper {
+    height: 6rem;
+    margin: 4.25rem 0 5.375rem 0; }
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 1) {
+  #dialog {
+    height: 33rem; }
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+/* Portrait */
+/* Landscape */
+/* ----------- Android ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+@media only screen and (min-device-width: 321px) and (max-device-width: 568px) {
+  .download-board {
+    margin-top: 2rem; }
+  .download-board a {
+    width: 40%;
+    margin: 0;
+    float: right; }
+  .download-board a img {
+    width: 130px; }
+  #dialog {
+    height: 33rem; }
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+  #dialog .board-title ul li.active div {
+    height: 2.5rem; } }
+
+/* ----------- Wechat ----------- */
+body.wechat {
+  background: #FFF; }
+
+body.wechat #header .menu {
+  width: 10rem;
+  margin-right: 1rem; }
+
+body.wechat #header .login {
+  margin-right: 1.5rem; }
+
+body.wechat .download-board {
+  margin: 0;
+  margin-top: 0.5rem; }
+
+body.wechat .download-board a {
+  width: 40%;
+  margin: 0;
+  margin-right: 0.5rem;
+  float: right; }
+
+body.wechat .download-board a img {
+  float: right;
+  width: 120px; }
+
+body.wechat #dialog {
+  width: 24rem;
+  height: 21rem;
+  margin-left: -12rem; }
+
+body.wechat #dialog .logo-img {
+  width: 4.75rem; }
+
+body.wechat #dialog .img-wrapper {
+  height: 4rem;
+  margin: 2.25rem 0 1.375rem 0; }
+
+body.wechat #dialog .board-body input {
+  height: 2.875rem; }
+
+body.wechat #dialog .login-board .board-title ul li.forget {
+  margin-left: 20%;
+  width: 60%; }
+
+body.wechat #dialog .board-title ul li.active div {
+  height: 2.5rem; }
+
+body.wechat .getcode {
+  margin: 0.5rem 0 0 0;
+  width: 6rem; }
+
+/*
+ * @author: Caesar
+ * @module: Index
  * @depend:
  *
  */
